@@ -14,7 +14,7 @@ json_new_tweet = api.model('New tweet', {
     'text': fields.String(required=True, min_length=1),  # Don't allow empty string
 })
 
-@api.route('/<int:tweet_id>')  # route extension (ie: /tweets/<int:id>)
+@api.route('/<int:id>')  # route extension (ie: /tweets/<int:id>)
 @api.response(404, 'Tweet not found')
 @api.param('tweet_id', 'The tweet unique identifier')
 class TweetResource(Resource):
